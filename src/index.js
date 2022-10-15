@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import { createRoot } from "react-dom/client";
+import SingleTodo from "./components/SingleTodo";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const dummyToDo = ["Feed dog", "Take out trash", "Make a React app"];
+const list = {
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
+  border: "1px solid black",
+  width: "200px",
+  padding: "10px",
+  fontFamily: "'Roboto', arial",
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Main = () => {
+  const [todos, setTodos] = useState(dummyToDo);
+  return (
+    <div style={list}>
+      <header>Todos</header>
+      <div>
+        {todos.map((todo) => (
+          <SingleTodo key={todo} todo={todo} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<Main />);
