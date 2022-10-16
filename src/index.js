@@ -24,6 +24,7 @@ const list = {
   padding: "10px",
   fontFamily: "'Roboto', arial",
   backgroundColor: "white",
+  borderRadius: "4px",
 };
 const todoApp = {
   display: "flex",

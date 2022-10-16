@@ -23,14 +23,15 @@ const normalList = {
 }
 
 const notCompleted = {
-    borderRadius: "8px",
+    borderRadius: "12px",
     border:"1px solid black"
 }
 const completed = {
     backgroundColor:"#17B169",
     color: "white",
     borderRadius: "8px",
-    border:"1px solid black"
+    border:"1px solid black",
+    opacity: "70%"
 }
 const SingleToDo = ({ todo, filter }) => {
 	const [done, setDone] = useState(false);
@@ -41,11 +42,8 @@ const SingleToDo = ({ todo, filter }) => {
     if (filter === 'complete'){
         return done ? (
             <div style={singleTodo}>
-            <input
-                type="button"
-                className="check"
+            <button
                 onClick={clickToDo}
-                value={done ? "✔" : "   "}
                 style={!done ? notCompleted : completed}
             />
             <div style={done ? strikeStyle : normalList}>{todo}</div>
@@ -54,11 +52,8 @@ const SingleToDo = ({ todo, filter }) => {
     }  else if (filter === 'active') {
         return !done ? (
             <div style={singleTodo}>
-            <input
-                type="button"
-                className="check"
+            <button
                 onClick={clickToDo}
-                value={done ? "✔" : "   "}
                 style={!done ? notCompleted : completed}
             />
             <div style={done ? strikeStyle : normalList}>{todo}</div>
@@ -67,11 +62,9 @@ const SingleToDo = ({ todo, filter }) => {
     } else {
         return (
             <div style={singleTodo}>
-                <input
-                    type="button"
-                    className="check"
+                <button
                     onClick={clickToDo}
-                    value={done ? "✔" : "   "}
+
                     style={!done ? notCompleted: completed}
                 />
                 <div style={done ? strikeStyle : normalList}>{todo}</div>

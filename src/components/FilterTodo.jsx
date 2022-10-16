@@ -14,7 +14,7 @@ const selected = {
 const FilterTodo = ({ filter, setFilter }) => {
     return (
         <div style={filterButtons}>
-            <button style={filter === "all" ? selected : btn} value="all" onClick={(btn)=> setFilter(btn.target.value)}>
+            <button style={filter === "all" ? selected :btn} value="all" onClick={(btn)=> setFilter(btn.target.value)}>
                 All
             </button>
             <button style={filter === "active" ? selected : btn} value="active" onClick={(btn)=> setFilter(btn.target.value)}>
