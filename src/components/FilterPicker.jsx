@@ -1,47 +1,20 @@
 import React from 'react';
 
-const singleTodo = {
-    display: "flex",
-    flexdirection: "row",
-    borderBottom: "1px solid black",
-    margin: "10px",
-    fontFamily: "'Roboto', arial",
-}
-const strikeStyle = {
-	textDecorationLine: 'line-through',
-    fontStyle: "italic",
-    opacity: '20%',
-    fontFamily: "'Roboto', arial",
-    marginLeft: "5px",
-    letterSpacing: "1px"
-};
-const normalList = {
-    fontFamily: "'Roboto', arial",
-    marginLeft: "5px",
-    letterSpacing: "1px"
-}
-
-const notCompleted = {
-    borderRadius: "50%",
-    border:"1px solid black",
-    height: "15px"
-}
-const completed = {
-    backgroundColor:"#1E90FF",
-    color: "white",
-    borderRadius: "50%",
-    height: "15px",
-    border:"1px solid black",
-}
-
+/**
+ * Function that displays the UI depending on the value of "filter".
+ * @param {*} props 
+ * @returns the list of "to-do" items that fit the filter value ('all','active', or 'complete')
+ */
 const filterPicker = (props) => {
     return (
-        <div style={singleTodo}>
+//Logic that determines whether or not a button should display as completed or not.
+        <div className="single-todo">
         <button
             onClick={props.clickToDo}
-            style={!props.done ? notCompleted : completed}
+            className={!props.done ? "not-completed" : "completed"}
         />
-        <div style={props.done ? strikeStyle : normalList}>{props.todo}</div>
+{/* Logic that determines whether or not a list item should display as "struck through" (completed) or not. */}
+        <div className={props.done ? "strike-style" : "normal-list"}>{props.todo}</div>
     </div>
     )
 }

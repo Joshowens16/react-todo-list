@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import SingleTodo from "./components/SingleTodo";
 import FilterTodo from "./components/FilterTodo";
+import "./App.css";
 // import FilterPicker from "./components/FilterPicker";
 
 document.body.style = "background: #1E90FF";

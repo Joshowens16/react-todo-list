@@ -1,27 +1,39 @@
 import React from 'react';
-const filterButtons = {
-    padding: "10px"
-}
-const btn = {
-    margin: "10px",
-    width: "80px"
-}
+// Style element that puts a shadow around the selected filter button
 const selected = {
-    margin: "10px",
-    width: "80px",
     boxShadow: "0px 0px 10px 1px gray"
 }
+/**
+ * Function that determines the value of the "filter" value, which is passed to
+ * the "SingleTodo" component.
+ * @param {*} param0 
+ * @returns The value of "filter".
+ */
 const FilterTodo = ({ filter, setFilter }) => {
     return (
-        <div style={filterButtons}>
-            <button style={filter === "all" ? selected :btn} value="all" onClick={(btn)=> setFilter(btn.target.value)}>
-                All
+        <div className="filter-buttons">
+{/* If 'All' is selected, the value of filter is 'all' */}
+            <button 
+                className="filter-btn" 
+                style={ filter === "all" ? selected : null } value="all" 
+                onClick={(btn)=> setFilter(btn.target.value)}>
+                    All
             </button>
-            <button style={filter === "active" ? selected : btn} value="active" onClick={(btn)=> setFilter(btn.target.value)}>
-                Active
+{/* If 'Active' is selected, the value of filter is 'active' */}
+            <button 
+                className="filter-btn" 
+                style={ filter === "active" ? selected : null } 
+                value="active" 
+                onClick={(btn)=> setFilter(btn.target.value)}>
+                    Active
             </button>
-            <button style={filter === "complete" ? selected : btn} value="complete" onClick={(btn)=> setFilter(btn.target.value)}>
-                Completed
+{/* If 'Completed' is selected, the value of filter is 'complete' */}
+            <button 
+                className="filter-btn" 
+                style={ filter === "complete" ? selected : null } 
+                value="complete"
+                onClick={(btn)=> setFilter(btn.target.value)}>
+                    Completed
             </button>
         </div>
     );

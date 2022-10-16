@@ -1,0 +1,37 @@
+
+.filter-btn{
+    margin: 10px;
+    width: 80px;
+    padding: "10px"
+}
+.single-todo {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    font-family: 'Roboto', arial
+}
+.not-completed{
+    border-radius: 50%;
+    border:1px solid black;
+    height: 15px
+}
+.completed{
+    background-color:#1E90FF;
+    border-radius: 50%;
+    height: 15px;
+    border:1px solid black;
+}
+.strike-style{
+	text-decoration-line: line-through;
+    font-style: italic;
+    opacity: 20%;
+    font-family: 'Roboto', arial;
+    margin-left: 5px;
+    letter-spacing: 1px
+} 
+.normal-list{
+    font-family: 'Roboto', arial;
+    margin-left: 5px;
+    letter-spacing: 1px
+}
