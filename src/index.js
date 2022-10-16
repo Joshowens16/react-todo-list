@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import SingleTodo from "./components/SingleTodo";
 import FilterTodo from "./components/FilterTodo";
+// import FilterPicker from "./components/FilterPicker";
 
 document.body.style = "background: #1E90FF";
 
@@ -52,6 +53,7 @@ const Main = () => {
             <SingleTodo key={todo} todo={todo} filter={filter} />
           ))}
         </div>
+
         <FilterTodo filter={filter} setFilter={setFilter} />
       </div>
     </div>

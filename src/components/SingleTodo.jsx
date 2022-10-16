@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FilterPicker from './FilterPicker';
 
 //styling components
 const singleTodo = {
@@ -34,43 +35,91 @@ const completed = {
     height: "15px",
     border:"1px solid black",
 }
-const SingleToDo = ({ todo, filter }) => {
+
+//singleTodo, clickToDo, done, notCompleted, completed, todo, strikeStyle, normalList
+const SingleToDo = (props) => {
 	const [done, setDone] = useState(false);
 	function clickToDo() {
 		setDone(!done); 
 	}
 
-    if (filter === 'complete'){
+    if (props.filter === 'complete'){
         return done ? (
-            <div style={singleTodo}>
-            <button
-                onClick={clickToDo}
-                style={!done ? notCompleted : completed}
+            <FilterPicker singleTodo={singleTodo} 
+            clickToDo={clickToDo} 
+            done={done} 
+            notCompleted={notCompleted} 
+            completed={completed} 
+            todo={props.todo} 
+            strikeStyle={strikeStyle} 
+            normalList={normalList} 
             />
-            <div style={done ? strikeStyle : normalList}>{todo}</div>
-        </div>
         ) : null
-    }  else if (filter === 'active') {
+    }  else if (props.filter === 'active') {
         return !done ? (
-            <div style={singleTodo}>
-            <button
-                onClick={clickToDo}
-                style={!done ? notCompleted : completed}
+            <FilterPicker singleTodo={singleTodo} 
+            clickToDo={clickToDo} 
+            done={done} 
+            notCompleted={notCompleted} 
+            completed={completed} 
+            todo={props.todo} 
+            strikeStyle={strikeStyle} 
+            normalList={normalList} 
             />
-            <div style={done ? strikeStyle : normalList}>{todo}</div>
-        </div>
         ) : null 
     } else {
         return (
-            <div style={singleTodo}>
-                <button
-                    onClick={clickToDo}
-                    style={!done ? notCompleted : completed}
-                />
-                <div style={done ? strikeStyle : normalList}>{todo}</div>
-            </div>
+            <FilterPicker singleTodo={singleTodo} 
+            clickToDo={clickToDo} 
+            done={done} 
+            notCompleted={notCompleted} 
+            completed={completed} 
+            todo={props.todo} 
+            strikeStyle={strikeStyle} 
+            normalList={normalList} 
+            />
             )
     }
 };
 
 export default SingleToDo;
+
+
+// const SingleToDo = ({ todo, filter }) => {
+// 	const [done, setDone] = useState(false);
+// 	function clickToDo() {
+// 		setDone(!done); 
+// 	}
+
+//     if (filter === 'complete'){
+//         return done ? (
+//             <div style={singleTodo}>
+//             <button
+//                 onClick={clickToDo}
+//                 style={!done ? notCompleted : completed}
+//             />
+//             <div style={done ? strikeStyle : normalList}>{todo}</div>
+//         </div>
+//         ) : null
+//     }  else if (filter === 'active') {
+//         return !done ? (
+//             <div style={singleTodo}>
+//             <button
+//                 onClick={clickToDo}
+//                 style={!done ? notCompleted : completed}
+//             />
+//             <div style={done ? strikeStyle : normalList}>{todo}</div>
+//         </div>
+//         ) : null 
+//     } else {
+//         return (
+//             <div style={singleTodo}>
+//                 <button
+//                     onClick={clickToDo}
+//                     style={!done ? notCompleted : completed}
+//                 />
+//                 <div style={done ? strikeStyle : normalList}>{todo}</div>
+//             </div>
+//             )
+//     }
+// };
