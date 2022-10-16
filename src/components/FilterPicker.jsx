@@ -8,7 +8,7 @@ import React from 'react';
 const filterPicker = (props) => {
     return (
 //Logic that determines whether or not a button should display as completed or not.
-        <div className="single-todo">
+    <div className="single-todo">
         <button
             onClick={props.clickToDo}
             className={!props.done ? "not-completed" : "completed"}

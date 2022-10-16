@@ -27,9 +27,9 @@ const SingleToDo = (props) => {
             <FilterPicker 
             clickToDo={clickToDo} 
             done={done} 
-            todo={props.todo} 
+            todo={props.todo}
             />
-        ) : null 
+        ) : null
 //If Filter's value is 'all', the logic returns the FilterPicker component and all children with all states.
     } else {
         return (

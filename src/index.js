@@ -27,6 +27,7 @@ const list = {
   fontFamily: "'Roboto', arial",
   backgroundColor: "#FFF8DC",
   borderRadius: "4px",
+  boxShadow: "2px 2px 6px",
 };
 const todoApp = {
   display: "flex",
