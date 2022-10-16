@@ -23,7 +23,7 @@ const list = {
   height: "auto",
   padding: "10px",
   fontFamily: "'Roboto', arial",
-  backgroundColor: "white",
+  backgroundColor: "#FFF8DC",
   borderRadius: "4px",
 };
 const todoApp = {

@@ -28,7 +28,7 @@ const notCompleted = {
     height: "15px"
 }
 const completed = {
-    backgroundColor:"#17B169",
+    backgroundColor:"#1E90FF",
     color: "white",
     borderRadius: "50%",
     height: "15px",
@@ -65,7 +65,6 @@ const SingleToDo = ({ todo, filter }) => {
             <div style={singleTodo}>
                 <button
                     onClick={clickToDo}
-
                     style={!done ? notCompleted: completed}
                 />
                 <div style={done ? strikeStyle : normalList}>{todo}</div>
