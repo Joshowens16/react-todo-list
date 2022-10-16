@@ -65,7 +65,7 @@ const SingleToDo = ({ todo, filter }) => {
             <div style={singleTodo}>
                 <button
                     onClick={clickToDo}
-                    style={!done ? notCompleted: completed}
+                    style={!done ? notCompleted : completed}
                 />
                 <div style={done ? strikeStyle : normalList}>{todo}</div>
             </div>
