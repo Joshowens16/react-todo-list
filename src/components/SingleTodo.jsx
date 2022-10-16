@@ -49,7 +49,7 @@ const SingleToDo = ({ todo, filter }) => {
             />
             <div style={done ? strikeStyle : normalList}>{todo}</div>
         </div>
-        ) : (' ')
+        ) : null
     }  else if (filter === 'active') {
         return !done ? (
             <div style={singleTodo}>
@@ -59,7 +59,7 @@ const SingleToDo = ({ todo, filter }) => {
             />
             <div style={done ? strikeStyle : normalList}>{todo}</div>
         </div>
-        ) : (' ') 
+        ) : null 
     } else {
         return (
             <div style={singleTodo}>
