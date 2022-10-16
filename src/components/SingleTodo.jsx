@@ -23,15 +23,16 @@ const normalList = {
 }
 
 const notCompleted = {
-    borderRadius: "12px",
-    border:"1px solid black"
+    borderRadius: "50%",
+    border:"1px solid black",
+    height: "15px"
 }
 const completed = {
     backgroundColor:"#17B169",
     color: "white",
-    borderRadius: "8px",
+    borderRadius: "50%",
+    height: "15px",
     border:"1px solid black",
-    opacity: "70%"
 }
 const SingleToDo = ({ todo, filter }) => {
 	const [done, setDone] = useState(false);
