@@ -1,29 +1,42 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import SingleTodo from "./components/SingleTodo";
+import FilterTodo from "./components/FilterTodo";
 
-const dummyToDo = ["Feed dog", "Take out trash", "Make a React app"];
+const dummyToDo = [
+  "Wallow in self pity",
+  "Stare into the abyss",
+  "Solve world hunger (tell no one)",
+  "Jazzercize",
+  "Dinner with me (I CAN'T cancel that again)",
+  "Wrestle with my self-loathing",
+];
 const list = {
   display: "flex",
   justifyContent: "center",
   flexDirection: "column",
   alignItems: "center",
   border: "1px solid black",
-  width: "200px",
+  width: "400px",
+  height: "auto",
   padding: "10px",
   fontFamily: "'Roboto', arial",
 };
-
+const header = {
+  letterSpacing: "6px",
+};
 const Main = () => {
-  const [todos, setTodos] = useState(dummyToDo);
+  const [todos] = useState(dummyToDo);
+  const [filter, setFilter] = useState("all");
   return (
     <div style={list}>
-      <header>Todos</header>
+      <header style={header}>Todo-List</header>
       <div>
         {todos.map((todo) => (
-          <SingleTodo key={todo} todo={todo} />
+          <SingleTodo key={todo} todo={todo} filter={filter} />
         ))}
       </div>
+      <FilterTodo filter={filter} setFilter={setFilter} />
     </div>
   );
 };
