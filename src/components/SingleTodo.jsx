@@ -27,7 +27,7 @@ const notCompleted = {
     border:"1px solid black"
 }
 const completed = {
-    backgroundColor:"green",
+    backgroundColor:"#17B169",
     color: "white",
     borderRadius: "8px",
     border:"1px solid black"
